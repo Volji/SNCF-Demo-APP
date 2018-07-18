@@ -1,0 +1,1675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Presentation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xi="http://www.w3.org/2001/XInclude" xsi:noNamespaceSchemaLocation="http://schemas.intuilab.com/intuiface/api5/ip.xsd" Name="SNCF-DEMO-FREIN" Templates="player://resources/418401b6-8f3b-4ebc-a8ea-a6d32480aa0f" Id="1-99cd3a52-8a1b-43d5-8559-bd45b6e5b909" DataPath=".\Files" Language="" Width="1920" Height="1080" ShowLoadingIndicator="true" Platform="windows" ApiNumber="25" MinApiNumber="25" RequiredPlayerWindows="6.2.0" RequiredPlayerTablet="6.2.0" LastModificationDate="2018-07-17T15:12:03.4079828Z" SnapshotPath="player://data/Snapshots/default.png">
+  <ComposerExtensions>
+    <Extension Name="HasActionTargetTreeBeenManipulated" Value="true" />
+    <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+    <Extension Name="IsExpandedInBindingViews" Value="True" />
+  </ComposerExtensions>
+  <Attachments>
+    <PresentationInactivityTrigger TimeoutInSeconds="value:180" RepeatTimer="false" TypeList="All">
+      <Navigate Type="Normal" Delay="value:0">
+        <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/START/" />
+        <Transition>
+          <BlackFadeTransition Duration="00:00:00.5000000" />
+        </Transition>
+      </Navigate>
+    </PresentationInactivityTrigger>
+  </Attachments>
+  <Properties>
+    <Property Type="Visual" Name="LoadingIndicatorStyle"><![CDATA[value:UniversalLoading]]></Property>
+    <Property Type="Visual" Name="NavigateWithKeyboardEnabled"><![CDATA[value:True]]></Property>
+  </Properties>
+  <Layers>
+    <Layer Name="Experience layer 1" Visual="Pinboard" LayerType="ExperienceForeground" AutoReset="true">
+      <ComposerExtensions>
+        <Extension Name="IsExpanded" Value="True" />
+        <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+        <Extension Name="IsExpandedInBindingViews" Value="True" />
+      </ComposerExtensions>
+      <Attachments>
+        <EventTrigger EventType="Container" EventName="ItemDropped">
+          <CreateAsset Delay="value:0.0" />
+        </EventTrigger>
+        <EventTrigger EventType="Visual" EventName="CollectionItemDropped">
+          <CreateAsset Delay="value:0.0" />
+        </EventTrigger>
+      </Attachments>
+      <Properties>
+        <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+        <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+        <Property Type="Container" Name="IsVisible"><![CDATA[value:True]]></Property>
+      </Properties>
+      <Asset Name="BOUTTON_TRANSPARENT" Visual="Button" Style="Simple button" Container="Static" ContainerStyle="" Domain="value:VisibleTrigger">
+        <Attachments>
+          <EventTrigger EventType="Visual" EventName="Released">
+            <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/Experience%20layer%201/RESTART/" Type="Container" Name="Show" Delay="value:0">
+              <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+              <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+              <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+              <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+              <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+              <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+              <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+              <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+            </InvokeService>
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="Font">
+            <Typeface>
+              <Family>Segoe UI</Family>
+              <Stretch>normal</Stretch>
+              <Weight>400</Weight>
+              <Style>normal</Style>
+            </Typeface>
+          </Property>
+          <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+          <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+          <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+          <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+          <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+          <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+          <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+          <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+          <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+          <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+          <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+          <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+          <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+          <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+          <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+          <Property Type="Container" Name="X"><![CDATA[value:1785]]></Property>
+          <Property Type="Container" Name="Y"><![CDATA[value:88]]></Property>
+          <Property Type="Container" Name="Width"><![CDATA[value:73]]></Property>
+          <Property Type="Container" Name="Height"><![CDATA[value:80]]></Property>
+          <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+        </Properties>
+      </Asset>
+      <Collection Name="RESTART" Visual="Group" Style="" Container="Static">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="HasBeenRenamed" Value="True" />
+          <Extension Name="IsLocked" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Properties>
+          <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+          <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+          <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+          <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+          <Property Type="Visual" Name="InitialWidth"><![CDATA[value:1920]]></Property>
+          <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+          <Property Type="Visual" Name="InitialHeight"><![CDATA[value:1080]]></Property>
+          <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+          <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+        </Properties>
+        <Asset Name="Rectangle" Visual="DefaultRectangle" Style="" Container="Default" ContainerStyle="" Domain="value:Rectangle">
+          <Properties>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinimizedHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="DisplayButtonsRadius"><![CDATA[value:19]]></Property>
+            <Property Type="Visual" Name="BorderThickness"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#FF000000]]></Property>
+            <Property Type="Container" Name="Opacity"><![CDATA[value:0.8]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="Do you really want t" Visual="DefaultText" Style="" Container="Scale" ContainerStyle="" Domain="value:Text">
+          <Properties>
+            <Property Type="Domain" Name="Text"><![CDATA[value:Do you really want to start the demonstration again?]]></Property>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>Segoe UI</Family>
+                <Stretch>normal</Stretch>
+                <Weight>400</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:33]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FFFFFFFF]]></Property>
+            <Property Type="Visual" Name="VerticalAlignment"><![CDATA[value:Center]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="Alignment"><![CDATA[value:Center]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:296]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:450]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:185]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="RESTART" Visual="Button" Style="Simple button" Container="Default" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <Navigate Type="Normal" Delay="value:0">
+                <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/START/" />
+                <Transition>
+                  <BlackFadeTransition Duration="00:00:00.5000000" />
+                </Transition>
+              </Navigate>
+            </EventTrigger>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/Experience%20layer%201/RESTART/" Type="Container" Name="Hide" Delay="value:0">
+                <ServiceValueParameter ParamName="showOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>HelveticaNeue</Family>
+                <Stretch>normal</Stretch>
+                <Weight>700</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:37]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:RESTART]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#FF008BCB]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:34]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#7F000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FFFFFFFF]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#FF2C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="Bold"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:480]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:450]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:120]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="CANCEL" Visual="Button" Style="Simple button" Container="Default" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/Experience%20layer%201/RESTART/" Type="Container" Name="Hide" Delay="value:0">
+                <ServiceValueParameter ParamName="showOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>HelveticaNeue</Family>
+                <Stretch>normal</Stretch>
+                <Weight>700</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:37]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:CANCEL]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#FF008BCB]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:34]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#7F000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FFFFFFFF]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#FF2C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="Bold"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:647]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:450]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:120]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+      </Collection>
+    </Layer>
+  </Layers>
+  <Spaces>
+    <Space Name="START" AutoReset="true" BackgroundColor="#FFFFFFFF">
+      <ComposerExtensions>
+        <Extension Name="Notifications" Value="">
+          <ComplexAttributes>
+            <Attribute Key="f1e5a7b5-2fc7-4690-b549-55465c90ee83" Value="False" />
+          </ComplexAttributes>
+        </Extension>
+        <Extension Name="ViewPortXOnScene" Value="2021.05263157895" />
+        <Extension Name="ViewPortYOnScene" Value="1706.454816286" />
+        <Extension Name="TranslateXOnScene" Value="-960" />
+        <Extension Name="TranslateYOnScene" Value="-635.53488372093" />
+      </ComposerExtensions>
+      <Attachments>
+        <TimerTrigger Interval="value:4" NumberOfTicks="1">
+          <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/START/Layer%201/DESIGN-APPLI-EN-01/" Type="Container" Name="Show" Delay="value:0">
+            <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+            <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+            <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+            <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+            <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+            <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+            <ServiceValueParameter ParamName="dDuration" Value="value:1.0999999999999999" />
+            <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+          </InvokeService>
+        </TimerTrigger>
+      </Attachments>
+      <Layer Name="Layer 1" Visual="Pinboard" LayerType="Default">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Attachments>
+          <EventTrigger EventType="Container" EventName="ItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+        </Properties>
+        <Asset Name="HOME" Visual="VlcVideo" Style="" Container="Static" ContainerStyle="" Domain="value:Video">
+          <Properties>
+            <Property Type="Visual" Name="GeneratedPosterFrameUri"><![CDATA[player://resources/a1beb33f-b21e-4335-ac46-de66aecce398]]></Property>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/b0979eea-872b-4467-9ff7-c80fc4669ea7]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Visual" Name="ShowControls"><![CDATA[value:False]]></Property>
+            <Property Type="Visual" Name="Autoplay"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="StartupVideoPosition"><![CDATA[value:00:00:00]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="DESIGN-APPLI-EN-01" Visual="DefaultImage" Style="" Container="Static" ContainerStyle="" Domain="value:Image">
+          <ComposerExtensions>
+            <Extension Name="IsLocked" Value="True" />
+          </ComposerExtensions>
+          <Properties>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/5ac70f91-cbe4-4400-8eed-f3957e62a099]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BOUTTON_TRANSPARENT" Visual="Button" Style="Simple button" Container="Static" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <Navigate Type="Normal" Delay="value:0">
+                <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/CHOICE%20WAGON/" />
+                <Transition>
+                  <BlackFadeTransition Duration="00:00:00.5000000" />
+                </Transition>
+              </Navigate>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>Segoe UI</Family>
+                <Stretch>normal</Stretch>
+                <Weight>400</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:943]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:767]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:312]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:174]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+      </Layer>
+    </Space>
+    <Space Name="CHOICE WAGON" AutoReset="true" BackgroundColor="#FFFFFFFF">
+      <ComposerExtensions>
+        <Extension Name="Notifications" Value="">
+          <ComplexAttributes>
+            <Attribute Key="f1e5a7b5-2fc7-4690-b549-55465c90ee83" Value="False" />
+          </ComplexAttributes>
+        </Extension>
+        <Extension Name="TranslateXOnScene" Value="-1138.54698094931" />
+        <Extension Name="TranslateYOnScene" Value="-559.988278370426" />
+        <Extension Name="ViewPortXOnScene" Value="2494.82208588957" />
+        <Extension Name="ViewPortYOnScene" Value="1916.62297585508" />
+      </ComposerExtensions>
+      <Layer Name="Layer 1" Visual="Pinboard" LayerType="Default">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Attachments>
+          <EventTrigger EventType="Container" EventName="ItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+          <EventTrigger EventType="Visual" EventName="CollectionItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+        </Properties>
+        <Asset Name="DESIGN-APPLI-EN-02" Visual="DefaultImage" Style="" Container="Static" ContainerStyle="" Domain="value:Image">
+          <Properties>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/77871c1f-71af-41a9-ac02-091fa553934f]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BOUTTON_TRANSPARENT" Visual="Button" Style="Simple button" Container="Static" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <Navigate Type="Normal" Delay="value:0">
+                <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/CONFIRM%20WAGON/" />
+                <Transition>
+                  <BlackFadeTransition Duration="00:00:00.5000000" />
+                </Transition>
+              </Navigate>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>Segoe UI</Family>
+                <Stretch>normal</Stretch>
+                <Weight>400</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:939]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:679]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1013]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:401]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+      </Layer>
+    </Space>
+    <Space Name="CONFIRM WAGON" AutoReset="true" BackgroundColor="#FFFFFFFF">
+      <ComposerExtensions>
+        <Extension Name="Notifications" Value="">
+          <ComplexAttributes>
+            <Attribute Key="f1e5a7b5-2fc7-4690-b549-55465c90ee83" Value="False" />
+          </ComplexAttributes>
+        </Extension>
+        <Extension Name="TranslateXOnScene" Value="-960" />
+        <Extension Name="ViewPortXOnScene" Value="2021.05263157895" />
+        <Extension Name="ViewPortYOnScene" Value="1552.65416760786" />
+        <Extension Name="TranslateYOnScene" Value="-922.139534883721" />
+      </ComposerExtensions>
+      <Layer Name="Layer 1" Visual="Pinboard" LayerType="Default">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Attachments>
+          <EventTrigger EventType="Container" EventName="ItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+          <EventTrigger EventType="Visual" EventName="CollectionItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+        </Properties>
+        <Asset Name="DESIGN-APPLI-EN-03" Visual="DefaultImage" Style="" Container="Static" ContainerStyle="" Domain="value:Image">
+          <Properties>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/fc5b635b-54b6-47a6-bd7f-eb8a7690d7b4]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BOUTTON_TRANSPARENT" Visual="Button" Style="Simple button" Container="Static" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/CONFIRM%20WAGON/Layer%201/TRAIN%20NETWORK/" Type="Container" Name="Show" Delay="value:0">
+                <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>Segoe UI</Family>
+                <Stretch>normal</Stretch>
+                <Weight>400</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:934]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:640]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1159]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:200]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="TRAIN NETWORK" Visual="VlcVideo" Style="" Container="Static" ContainerStyle="" Domain="value:Video">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Ended">
+              <Navigate Type="Normal" Delay="value:0">
+                <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/CHECKING%20BRAKE/" />
+                <Transition>
+                  <BlackFadeTransition Duration="00:00:00.5000000" />
+                </Transition>
+              </Navigate>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="GeneratedPosterFrameUri"><![CDATA[player://resources/0a9f7048-cf2b-454c-8dab-d329f46ae001]]></Property>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/63635bf7-df56-4b00-be5d-fe6fb32b2281]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Visual" Name="StartupVideoPosition"><![CDATA[value:00:00:00]]></Property>
+            <Property Type="Visual" Name="ShowControls"><![CDATA[value:False]]></Property>
+            <Property Type="Visual" Name="Autoplay"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+      </Layer>
+    </Space>
+    <Space Name="CHECKING BRAKE" AutoReset="true" BackgroundColor="#FFFFFFFF">
+      <ComposerExtensions>
+        <Extension Name="Notifications" Value="">
+          <ComplexAttributes>
+            <Attribute Key="f1e5a7b5-2fc7-4690-b549-55465c90ee83" Value="False" />
+          </ComplexAttributes>
+        </Extension>
+        <Extension Name="TranslateXOnScene" Value="-960" />
+        <Extension Name="TranslateYOnScene" Value="-540" />
+        <Extension Name="ViewPortXOnScene" Value="2517.71819704309" />
+        <Extension Name="ViewPortYOnScene" Value="1934.21269214898" />
+      </ComposerExtensions>
+      <Layer Name="Layer 1" Visual="Pinboard" LayerType="Default">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Attachments>
+          <EventTrigger EventType="Container" EventName="ItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+          <EventTrigger EventType="Visual" EventName="CollectionItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+        </Properties>
+        <Asset Name="DESIGN-APPLI-EN_Plan de travail 6" Visual="DefaultImage" Style="" Container="Static" ContainerStyle="" Domain="value:Image">
+          <Properties>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/75ab5562-8e45-46ce-8000-c71207032ea9]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BOUTTON_TRANSPARENT" Visual="Button" Style="Simple button" Container="Static" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/CHECKING%20BRAKE/Layer%201/BRAKE%20APPLICATION%20/" Type="Container" Name="Show" Delay="value:0">
+                <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>Segoe UI</Family>
+                <Stretch>normal</Stretch>
+                <Weight>400</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:939]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:648]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1164]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:167]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BRAKE APPLICATION " Visual="VlcVideo" Style="" Container="Static" ContainerStyle="" Domain="value:Video">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Ended">
+              <Navigate Type="Normal" Delay="value:0">
+                <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/" />
+                <Transition>
+                  <BlackFadeTransition Duration="00:00:00.5000000" />
+                </Transition>
+              </Navigate>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="GeneratedPosterFrameUri"><![CDATA[player://resources/a66e5ddc-000c-45d2-a17c-ec2ab91f1a87]]></Property>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/af8041c2-985a-44d2-90d3-7edc4440b243]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Visual" Name="Autoplay"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="ShowControls"><![CDATA[value:False]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+      </Layer>
+    </Space>
+    <Space Name="BRAKE RELEASE" AutoReset="true" BackgroundColor="#FFFFFFFF">
+      <ComposerExtensions>
+        <Extension Name="Notifications" Value="">
+          <ComplexAttributes>
+            <Attribute Key="f1e5a7b5-2fc7-4690-b549-55465c90ee83" Value="False" />
+          </ComplexAttributes>
+        </Extension>
+        <Extension Name="ViewPortXOnScene" Value="2497.17791411043" />
+        <Extension Name="ViewPortYOnScene" Value="2108.46625766871" />
+        <Extension Name="TranslateXOnScene" Value="-1015.02391236803" />
+        <Extension Name="TranslateYOnScene" Value="-681.714647772342" />
+      </ComposerExtensions>
+      <Layer Name="Layer 1" Visual="Pinboard" LayerType="Default">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Attachments>
+          <EventTrigger EventType="Container" EventName="ItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+          <EventTrigger EventType="Visual" EventName="CollectionItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+        </Properties>
+        <Asset Name="DESIGN-APPLI-EN_Plan de travail 8" Visual="DefaultImage" Style="" Container="Static" ContainerStyle="" Domain="value:Image">
+          <Properties>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/4721f52b-969c-4829-9da5-c417a88bcd14]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BOUTTON_TRANSPARENT" Visual="Button" Style="Simple button" Container="Static" ContainerStyle="" Domain="value:VisibleTrigger">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Released">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/Layer%201/BRAKE%20RELEASE/" Type="Container" Name="Show" Delay="value:0">
+                <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="Font">
+              <Typeface>
+                <Family>Segoe UI</Family>
+                <Stretch>normal</Stretch>
+                <Weight>400</Weight>
+                <Style>normal</Style>
+              </Typeface>
+            </Property>
+            <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+            <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+            <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+            <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+            <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+            <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:955]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:661]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1163]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:162]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+        </Asset>
+        <Asset Name="BRAKE RELEASE" Visual="VlcVideo" Style="" Container="Static" ContainerStyle="" Domain="value:Video">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Ended">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/Layer%201/Group%201/" Type="Container" Name="Show" Delay="value:0">
+                <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="GeneratedPosterFrameUri"><![CDATA[player://resources/aa37d2b9-ff83-44ff-be30-6728cb89afdd]]></Property>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/dfe7c47e-5729-4fb2-a7bb-db133c20df65]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="AutoplayOnRewind"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="Autoplay"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="ShowControls"><![CDATA[value:False]]></Property>
+            <Property Type="Visual" Name="StartupVideoPosition"><![CDATA[value:00:00:00]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+          </Properties>
+        </Asset>
+        <Collection Name="Group 1" Visual="Group" Style="" Container="Static">
+          <ComposerExtensions>
+            <Extension Name="IsExpanded" Value="True" />
+            <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+            <Extension Name="IsExpandedInBindingViews" Value="True" />
+          </ComposerExtensions>
+          <Properties>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Visual" Name="InitialWidth"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Visual" Name="InitialHeight"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+          </Properties>
+          <Asset Name="DESIGN-APPLI-EN_Plan de travail 10" Visual="DefaultImage" Style="" Container="Default" ContainerStyle="" Domain="value:Image">
+            <Properties>
+              <Property Type="Domain" Name="Source"><![CDATA[player://resources/1a0418be-8206-44b2-aae2-3a834cdd4882]]></Property>
+              <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+              <Property Type="Container" Name="IsVisible"><![CDATA[value:True]]></Property>
+            </Properties>
+          </Asset>
+          <Asset Name="BOUTTON_TRANSPARENT 2" Visual="Button" Style="Simple button" Container="Default" ContainerStyle="" Domain="value:VisibleTrigger">
+            <Attachments>
+              <EventTrigger EventType="Visual" EventName="Released">
+                <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/Layer%201/Group/" Type="Container" Name="MoveRotateResize" Delay="value:0">
+                  <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                  <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                  <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                  <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                  <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                  <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+                  <ServiceValueParameter ParamName="dAngle" Value="value:0" />
+                  <ServiceValueParameter ParamName="dWidth" Value="value:1920" />
+                  <ServiceValueParameter ParamName="dHeight" Value="value:911" />
+                  <ServiceValueParameter ParamName="dX" Value="value:961" />
+                  <ServiceValueParameter ParamName="dY" Value="value:624" />
+                </InvokeService>
+              </EventTrigger>
+            </Attachments>
+            <Properties>
+              <Property Type="Visual" Name="Font">
+                <Typeface>
+                  <Family>Segoe UI</Family>
+                  <Stretch>normal</Stretch>
+                  <Weight>400</Weight>
+                  <Style>normal</Style>
+                </Typeface>
+              </Property>
+              <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+              <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+              <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+              <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+              <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+              <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+              <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+              <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+              <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+              <Property Type="Container" Name="X"><![CDATA[value:1648]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:951]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:456]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:150]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            </Properties>
+          </Asset>
+        </Collection>
+        <Collection Name="Group" Visual="Group" Style="" Container="Static">
+          <ComposerExtensions>
+            <Extension Name="IsExpanded" Value="True" />
+            <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+            <Extension Name="IsExpandedInBindingViews" Value="True" />
+          </ComposerExtensions>
+          <Properties>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:2880]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:624]]></Property>
+            <Property Type="Visual" Name="InitialWidth"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Visual" Name="InitialHeight"><![CDATA[value:911]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:911]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+          </Properties>
+          <Asset Name="DESIGN-APPLI-EN_Plan de travail 11" Visual="DefaultImage" Style="" Container="Default" ContainerStyle="" Domain="value:Image">
+            <Properties>
+              <Property Type="Domain" Name="Source"><![CDATA[player://resources/e1b88881-d77e-4462-be30-3ac06ae20ec6]]></Property>
+              <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:371]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            </Properties>
+          </Asset>
+          <Asset Name="BOUTTON_TRANSPARENT 1" Visual="Button" Style="Simple button" Container="Default" ContainerStyle="" Domain="value:VisibleTrigger">
+            <Attachments>
+              <EventTrigger EventType="Visual" EventName="Released">
+                <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/Layer%201/Group/Group%202/" Type="Container" Name="Show" Delay="value:0">
+                  <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                  <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                  <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                  <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                  <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                  <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                  <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                  <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+                </InvokeService>
+              </EventTrigger>
+            </Attachments>
+            <Properties>
+              <Property Type="Visual" Name="Font">
+                <Typeface>
+                  <Family>Segoe UI</Family>
+                  <Stretch>normal</Stretch>
+                  <Weight>400</Weight>
+                  <Style>normal</Style>
+                </Typeface>
+              </Property>
+              <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+              <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+              <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+              <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+              <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+              <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+              <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+              <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+              <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+              <Property Type="Container" Name="X"><![CDATA[value:1656]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:799]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:428]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:131]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            </Properties>
+          </Asset>
+          <Collection Name="Group 2" Visual="Group" Style="" Container="Default" ContainerStyle="">
+            <ComposerExtensions>
+              <Extension Name="IsExpanded" Value="True" />
+              <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+              <Extension Name="IsExpandedInBindingViews" Value="True" />
+            </ComposerExtensions>
+            <Properties>
+              <Property Type="Container" Name="X"><![CDATA[value:8]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:371]]></Property>
+              <Property Type="Visual" Name="InitialWidth"><![CDATA[value:3825]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:3825]]></Property>
+              <Property Type="Visual" Name="InitialHeight"><![CDATA[value:1080]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+              <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+            </Properties>
+            <Asset Name="DESIGN-APPLI-EN_Plan de travail 12" Visual="DefaultImage" Style="" Container="Default" ContainerStyle="" Domain="value:Image">
+              <Properties>
+                <Property Type="Domain" Name="Source"><![CDATA[player://resources/ac4d28e2-e2dd-4175-8ab5-0c100da45944]]></Property>
+                <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+                <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+                <Property Type="Container" Name="IsVisible"><![CDATA[value:True]]></Property>
+                <Property Type="Container" Name="X"><![CDATA[value:2864]]></Property>
+                <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+                <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+                <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+                <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+              </Properties>
+            </Asset>
+            <Asset Name="BOUTTON_TRANSPARENT 3" Visual="Button" Style="Simple button" Container="Default" ContainerStyle="" Domain="value:VisibleTrigger">
+              <Attachments>
+                <EventTrigger EventType="Visual" EventName="Released">
+                  <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/Layer%202/TRAIN_READY_TO_GO/" Type="Container" Name="Show" Delay="value:0">
+                    <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                    <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                    <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                    <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                    <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                    <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                    <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                    <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+                  </InvokeService>
+                </EventTrigger>
+              </Attachments>
+              <Properties>
+                <Property Type="Visual" Name="Font">
+                  <Typeface>
+                    <Family>Segoe UI</Family>
+                    <Stretch>normal</Stretch>
+                    <Weight>400</Weight>
+                    <Style>normal</Style>
+                  </Typeface>
+                </Property>
+                <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+                <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+                <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+                <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+                <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#00FAFAFA]]></Property>
+                <Property Type="Visual" Name="Radius"><![CDATA[value:0]]></Property>
+                <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+                <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#00000000]]></Property>
+                <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+                <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#002C2C2C]]></Property>
+                <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+                <Property Type="Container" Name="X"><![CDATA[value:2876]]></Property>
+                <Property Type="Container" Name="Y"><![CDATA[value:570]]></Property>
+                <Property Type="Container" Name="Width"><![CDATA[value:992]]></Property>
+                <Property Type="Container" Name="Height"><![CDATA[value:341]]></Property>
+                <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+              </Properties>
+            </Asset>
+          </Collection>
+        </Collection>
+      </Layer>
+      <Layer Name="Layer 2" Visual="Pinboard" LayerType="Default">
+        <ComposerExtensions>
+          <Extension Name="IsExpanded" Value="True" />
+          <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+          <Extension Name="IsExpandedInBindingViews" Value="True" />
+        </ComposerExtensions>
+        <Attachments>
+          <EventTrigger EventType="Container" EventName="ItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+          <EventTrigger EventType="Visual" EventName="CollectionItemDropped">
+            <CreateAsset Delay="value:0.0" />
+          </EventTrigger>
+        </Attachments>
+        <Properties>
+          <Property Type="Visual" Name="ItemShadow"><![CDATA[value:NoShadow]]></Property>
+          <Property Type="Visual" Name="ShowFeedback"><![CDATA[value:False]]></Property>
+        </Properties>
+        <Asset Name="TRAIN_READY_TO_GO" Visual="VlcVideo" Style="" Container="Static" ContainerStyle="" Domain="value:Video">
+          <Attachments>
+            <EventTrigger EventType="Visual" EventName="Ended">
+              <InvokeService Target="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/Layer%202/Group%203/" Type="Container" Name="Show" Delay="value:0">
+                <ServiceValueParameter ParamName="hideOtherAssetsInCollection" Value="value:False" />
+                <ServiceValueParameter ParamName="animationType" Value="value:Fade" />
+                <ServiceValueParameter ParamName="dDuration" Value="value:0.5" />
+                <ServiceValueParameter ParamName="eTweeningTypes" Value="value:eEaseInOut" />
+                <ServiceValueParameter ParamName="nRunningCount" Value="value:1" />
+                <ServiceValueParameter ParamName="eRepeatBehavior" Value="value:eAutoReverse" />
+                <ServiceValueParameter ParamName="dDelayBeforeRepeat" Value="value:0" />
+                <ServiceValueParameter ParamName="bResetAtEnd" Value="value:False" />
+              </InvokeService>
+            </EventTrigger>
+          </Attachments>
+          <Properties>
+            <Property Type="Visual" Name="GeneratedPosterFrameUri"><![CDATA[player://resources/f12e0144-a30a-470f-b4bc-8dd5662c6ace]]></Property>
+            <Property Type="Domain" Name="Source"><![CDATA[player://resources/f4383d7f-e915-4247-b2eb-d00b07c5113b]]></Property>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinWidth"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MinHeight"><![CDATA[value:50]]></Property>
+            <Property Type="Container" Name="MaxWidth"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="MaxHeight"><![CDATA[value:4000]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            <Property Type="Visual" Name="Autoplay"><![CDATA[value:True]]></Property>
+            <Property Type="Visual" Name="ShowControls"><![CDATA[value:False]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+          </Properties>
+        </Asset>
+        <Collection Name="Group 3" Visual="Group" Style="" Container="Static">
+          <ComposerExtensions>
+            <Extension Name="IsExpanded" Value="True" />
+            <Extension Name="IsExpandedInTriggerActionsView" Value="True" />
+            <Extension Name="IsExpandedInBindingViews" Value="True" />
+          </ComposerExtensions>
+          <Properties>
+            <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+            <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+            <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+            <Property Type="Visual" Name="InitialWidth"><![CDATA[value:1920]]></Property>
+            <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+            <Property Type="Visual" Name="InitialHeight"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+            <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            <Property Type="Container" Name="IsVisible"><![CDATA[value:False]]></Property>
+          </Properties>
+          <Asset Name="DESIGN-APPLI-EN_Plan de travail 14" Visual="DefaultImage" Style="" Container="Default" ContainerStyle="" Domain="value:Image">
+            <Properties>
+              <Property Type="Domain" Name="Source"><![CDATA[player://resources/63310ecc-1857-47c8-97ab-21b966b3185c]]></Property>
+              <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="IsVisible"><![CDATA[value:True]]></Property>
+              <Property Type="Container" Name="X"><![CDATA[value:960]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:540]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:1920]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:1080]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            </Properties>
+          </Asset>
+          <Asset Name="Image button" Visual="ImageButton" Style="" Container="Default" ContainerStyle="" Domain="value:VisibleTrigger">
+            <Attachments>
+              <EventTrigger EventType="Visual" EventName="Released">
+                <Navigate Type="Normal" Delay="value:0">
+                  <ServiceValueParameter ParamName="Target" Value="player://visuals/SNCF-DEMO-FREIN/START/" />
+                  <Transition>
+                    <BlackFadeTransition Duration="00:00:00.5000000" />
+                  </Transition>
+                </Navigate>
+              </EventTrigger>
+            </Attachments>
+            <Properties>
+              <Property Type="Visual" Name="Font">
+                <Typeface>
+                  <Family>Segoe UI</Family>
+                  <Stretch>normal</Stretch>
+                  <Weight>400</Weight>
+                  <Style>normal</Style>
+                </Typeface>
+              </Property>
+              <Property Type="Visual" Name="FontSize"><![CDATA[value:25]]></Property>
+              <Property Type="Visual" Name="Text"><![CDATA[value:]]></Property>
+              <Property Type="Container" Name="MinimizedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Container" Name="MinimizedPressedImage"><![CDATA[player://data/DefaultAssets/DefaultMinimized.png]]></Property>
+              <Property Type="Visual" Name="BackgroundColor"><![CDATA[value:#FFFAFAFA]]></Property>
+              <Property Type="Visual" Name="Radius"><![CDATA[value:5]]></Property>
+              <Property Type="Visual" Name="Flat"><![CDATA[value:True]]></Property>
+              <Property Type="Visual" Name="PressedVeilColor"><![CDATA[value:#7F000000]]></Property>
+              <Property Type="Visual" Name="FontColor"><![CDATA[value:#FF000000]]></Property>
+              <Property Type="Visual" Name="OutlineColor"><![CDATA[value:#FFB2B2B2]]></Property>
+              <Property Type="Visual" Name="LineWrap"><![CDATA[value:True]]></Property>
+              <Property Type="Visual" Name="ReleasedImage"><![CDATA[player://resources/3b31eab5-66c0-40fb-8396-147467c08619]]></Property>
+              <Property Type="Visual" Name="PressedImage"><![CDATA[player://resources/3b31eab5-66c0-40fb-8396-147467c08619]]></Property>
+              <Property Type="Container" Name="X"><![CDATA[value:1833]]></Property>
+              <Property Type="Container" Name="Y"><![CDATA[value:1011]]></Property>
+              <Property Type="Container" Name="Width"><![CDATA[value:76]]></Property>
+              <Property Type="Container" Name="Height"><![CDATA[value:76]]></Property>
+              <Property Type="Container" Name="Orientation"><![CDATA[value:0]]></Property>
+            </Properties>
+          </Asset>
+        </Collection>
+      </Layer>
+    </Space>
+  </Spaces>
+  <SharedContracts />
+  <Converters />
+  <ExternalAssets />
+  <Resources>
+    <Resource Key="418401b6-8f3b-4ebc-a8ea-a6d32480aa0f" Type="style" DefaultValue="value:IntuiFace White Style">
+      <Templates>
+        <AssetTemplate Propagate="true">
+          <Conditions />
+          <Property Type="Container" Name="DisplayButtonsFillColor"><![CDATA[value:#FFFAFAFA]]></Property>
+          <Property Type="Container" Name="DisplayButtonsOutlineColor"><![CDATA[value:#FFB2B2B2]]></Property>
+          <Property Type="Container" Name="DisplayButtonsRadius"><![CDATA[value:20]]></Property>
+          <Property Type="Container" Name="DisplayButtonsFlat"><![CDATA[value:True]]></Property>
+          <Property Type="Container" Name="DisplayButtonsShadow"><![CDATA[value:False]]></Property>
+          <Property Type="Container" Name="DisplayButtonsPressedColor"><![CDATA[value:#33000000]]></Property>
+          <Property Type="Container" Name="DisplayButtonsCheckedColor"><![CDATA[value:#00000000]]></Property>
+          <Property Type="Container" Name="CloseButtonIcon"><![CDATA[player://resources/addf0ae6-ccfa-4948-90ba-0d840081f3f2]]></Property>
+          <Property Type="Container" Name="MinimizeButtonIcon"><![CDATA[player://resources/03918373-8c3c-4b55-a14a-e31a3e63f2bf]]></Property>
+          <Property Type="Container" Name="MaximizeButtonIcon"><![CDATA[player://resources/82def5c0-afdc-4bbd-b52a-1834a34a9018]]></Property>
+          <Property Type="Container" Name="UnmaximizeButtonIcon"><![CDATA[player://resources/038794a9-ec80-4819-ab0d-d9eba20f47c9]]></Property>
+          <Property Type="Container" Name="PinButtonIcon"><![CDATA[player://resources/f03c1c0e-cbd7-4265-85f5-5611756d0ef3]]></Property>
+          <Property Type="Container" Name="UnpinButtonIcon"><![CDATA[player://resources/6a24bcbd-ee6a-4ea1-b743-4664a6d977f1]]></Property>
+          <Property Type="Visual" Name="ToolButtonsFillColor"><![CDATA[value:#FFFAFAFA]]></Property>
+          <Property Type="Visual" Name="ToolButtonsOutlineColor"><![CDATA[value:#FFB2B2B2]]></Property>
+          <Property Type="Visual" Name="ToolButtonsRadius"><![CDATA[value:5]]></Property>
+          <Property Type="Visual" Name="ToolButtonsFlat"><![CDATA[value:True]]></Property>
+          <Property Type="Visual" Name="ToolButtonsShadow"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="ToolButtonsPressedColor"><![CDATA[value:#33000000]]></Property>
+          <Property Type="Visual" Name="ToolButtonsActivatedColor"><![CDATA[value:#E61A1A1A]]></Property>
+          <Property Type="Visual" Name="ExportButtonIcon"><![CDATA[player://resources/aa713f11-2976-4ffa-94f1-79d8e3d47ba5]]></Property>
+          <Property Type="Visual" Name="ExportButtonIconSelected"><![CDATA[player://resources/6b989fb1-97ec-4fb5-95ac-411eba9f55ba]]></Property>
+          <Property Type="Visual" Name="DrawingToolsIcon"><![CDATA[player://resources/960e08b3-8ac3-4eff-b99f-eeaaa92d1008]]></Property>
+          <Property Type="Visual" Name="DrawingToolsIconActivated"><![CDATA[player://resources/7bf38286-9737-4f89-97f1-7a251e3b3831]]></Property>
+          <Property Type="Visual" Name="AnnotationPenIcon"><![CDATA[player://resources/bca6e6a3-5945-4eb2-bda3-c06c72fd8a87]]></Property>
+          <Property Type="Visual" Name="AnnotationPenIconSelected"><![CDATA[player://resources/0aea46af-9437-488f-9e13-291a521d8d77]]></Property>
+          <Property Type="Visual" Name="AnnotationHighlighterIcon"><![CDATA[player://resources/7cedfac9-a1ad-41e0-b54e-af3d5611bf4f]]></Property>
+          <Property Type="Visual" Name="AnnotationHighlighterIconSelected"><![CDATA[player://resources/ec05d834-4a66-4f38-b74d-056be66c478b]]></Property>
+          <Property Type="Visual" Name="AnnotationBrushLightIcon"><![CDATA[player://resources/4fac5d71-a9ed-42e9-98d6-72c7b6104dc7]]></Property>
+          <Property Type="Visual" Name="AnnotationBrushLightIconSelected"><![CDATA[player://resources/02584d08-a1e1-43c3-adae-1d52a7a3e73e]]></Property>
+          <Property Type="Visual" Name="AnnotationBrushLargeIcon"><![CDATA[player://resources/05ac8014-5fa4-4ab1-9bb0-e1314901ac83]]></Property>
+          <Property Type="Visual" Name="AnnotationBrushLargeIconSelected"><![CDATA[player://resources/44f5d3b3-b5af-49a3-924f-282196f6110c]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserIcon"><![CDATA[player://resources/f137ea31-fcb2-44b3-9804-0faf3d5ad12d]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserIconSelected"><![CDATA[player://resources/86600d57-cb7d-403f-bc94-0d8495dab4ee]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserSmallIcon"><![CDATA[player://resources/0199c133-76d9-4b1b-9ae0-484df49bbf21]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserSmallIconSelected"><![CDATA[player://resources/fa60f508-f68d-4c77-b373-6935767ca537]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserMediumIcon"><![CDATA[player://resources/bc49918c-4221-44a2-b89f-cfa44525a579]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserMediumIconSelected"><![CDATA[player://resources/321f5482-0158-457e-81ba-16fef09255eb]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserLargeIcon"><![CDATA[player://resources/fb3bf3e4-204e-4682-af35-48bd06675c51]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserLargeIconSelected"><![CDATA[player://resources/379f1151-2084-4ad6-8928-928a9ba989dd]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserStrokeIcon"><![CDATA[player://resources/242b73f8-a6f8-4609-aa33-538d5822012c]]></Property>
+          <Property Type="Visual" Name="AnnotationEraserStrokeIconSelected"><![CDATA[player://resources/fdabddea-f9a1-43a1-9dc5-532463b8837f]]></Property>
+          <Property Type="Visual" Name="AnnotationBrushFeltIcon"><![CDATA[player://resources/e385315f-540d-46b1-901f-a719ee8089aa]]></Property>
+          <Property Type="Visual" Name="AnnotationBrushFeltIconSelected"><![CDATA[player://resources/356b274a-5627-4fee-b7bf-1ae6068c074d]]></Property>
+          <Property Type="Visual" Name="AnnotationRedoIcon"><![CDATA[player://resources/0d8747dd-3534-4698-b2cd-20aa398b215f]]></Property>
+          <Property Type="Visual" Name="AnnotationRedoIconPressed"><![CDATA[player://resources/91909a53-9b33-4cdc-ad84-c6625c0b80f4]]></Property>
+          <Property Type="Visual" Name="AnnotationUndoIcon"><![CDATA[player://resources/02c3759a-8904-44c6-a79e-784a819bdcdd]]></Property>
+          <Property Type="Visual" Name="AnnotationUndoIconPressed"><![CDATA[player://resources/d7aa849a-9c76-4ca3-897f-b1598f1b4dac]]></Property>
+          <Property Type="Visual" Name="AnnotationWipeIcon"><![CDATA[player://resources/4637be15-ad0a-4df8-8f9b-1cc4c4de28f0]]></Property>
+          <Property Type="Visual" Name="AnnotationTakeSnapshotIcon"><![CDATA[player://resources/6bc78bd7-3367-43fa-9600-b967ddd12448]]></Property>
+          <Property Type="Visual" Name="ControlsFillColor"><![CDATA[value:#FFFAFAFA]]></Property>
+          <Property Type="Visual" Name="ControlsOutlineColor"><![CDATA[value:#FFB2B2B2]]></Property>
+          <Property Type="Visual" Name="ControlsRadius"><![CDATA[value:5]]></Property>
+          <Property Type="Visual" Name="ControlsFlat"><![CDATA[value:True]]></Property>
+          <Property Type="Visual" Name="ControlsShadow"><![CDATA[value:False]]></Property>
+          <Property Type="Visual" Name="TrackingBarFontColor"><![CDATA[value:#FF333333]]></Property>
+          <Property Type="Visual" Name="RewindButtonIcon"><![CDATA[player://resources/adc2b8d1-49ea-4aab-a59a-07a5b549b149]]></Property>
+          <Property Type="Visual" Name="PlayButtonIcon"><![CDATA[player://resources/69aba549-de3c-47d2-9af2-2d5566f9e483]]></Property>
+          <Property Type="Visual" Name="PauseButtonIcon"><![CDATA[player://resources/2ca20b02-a1c0-4c06-a3d5-95b8147d67de]]></Property>
+          <Property Type="Visual" Name="MuteIcon"><![CDATA[player://resources/0ca71444-ea31-4d86-aacc-a4b02d97a842]]></Property>
+          <Property Type="Visual" Name="VolumeLevel1Icon"><![CDATA[player://resources/68b316d8-6dc8-4e26-a9bf-633fee36830f]]></Property>
+          <Property Type="Visual" Name="VolumeLevel2Icon"><![CDATA[player://resources/ccfa2f4c-bff4-4232-b574-5229e84c0353]]></Property>
+          <Property Type="Visual" Name="VolumeLevel3Icon"><![CDATA[player://resources/480d4a10-6c11-4e3b-850f-a3a9316b1bc2]]></Property>
+          <Property Type="Visual" Name="KeyboardButtonIcon"><![CDATA[player://resources/36bd63b2-4767-45d7-b799-134519f229df]]></Property>
+          <Property Type="Visual" Name="RefreshButtonIcon"><![CDATA[player://resources/7b555203-16e2-4ded-b2d2-bc83cc79aa48]]></Property>
+          <Property Type="Visual" Name="StopLoadingButtonIcon"><![CDATA[player://resources/f8d2a822-e52a-46a6-895b-be8b8cda2f2c]]></Property>
+          <Property Type="Visual" Name="NavigationIcon"><![CDATA[player://resources/0b54df74-1e2f-4369-b4b7-35242b14f56c]]></Property>
+          <Property Type="Visual" Name="ResetButtonIcon"><![CDATA[player://resources/d8012435-1237-4717-b366-74eb04a4d5a6]]></Property>
+        </AssetTemplate>
+      </Templates>
+    </Resource>
+    <Resource Key="addf0ae6-ccfa-4948-90ba-0d840081f3f2" Type="uri" Length="475" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Close-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="03918373-8c3c-4b55-a14a-e31a3e63f2bf" Type="uri" Length="190" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Minimize-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="82def5c0-afdc-4bbd-b52a-1834a34a9018" Type="uri" Length="305" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Maximize-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="038794a9-ec80-4819-ab0d-d9eba20f47c9" Type="uri" Length="309" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Unmaximize-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="f03c1c0e-cbd7-4265-85f5-5611756d0ef3" Type="uri" Length="548" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Pin-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="6a24bcbd-ee6a-4ea1-b743-4664a6d977f1" Type="uri" Length="496" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Unpin-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="aa713f11-2976-4ffa-94f1-79d8e3d47ba5" Type="uri" Length="481" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Export-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="6b989fb1-97ec-4fb5-95ac-411eba9f55ba" Type="uri" Length="463" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-export-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="960e08b3-8ac3-4eff-b99f-eeaaa92d1008" Type="uri" Length="869" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Drawing-tools-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="7bf38286-9737-4f89-97f1-7a251e3b3831" Type="uri" Length="864" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-drawing-tools-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="bca6e6a3-5945-4eb2-bda3-c06c72fd8a87" Type="uri" Length="664" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Pen-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="0aea46af-9437-488f-9e13-291a521d8d77" Type="uri" Length="1036" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-pen-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="7cedfac9-a1ad-41e0-b54e-af3d5611bf4f" Type="uri" Length="955" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Highlighter-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="ec05d834-4a66-4f38-b74d-056be66c478b" Type="uri" Length="1252" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-highlighter-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="4fac5d71-a9ed-42e9-98d6-72c7b6104dc7" Type="uri" Length="936" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Light-brush-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="02584d08-a1e1-43c3-adae-1d52a7a3e73e" Type="uri" Length="1158" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-light-brush-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="05ac8014-5fa4-4ab1-9bb0-e1314901ac83" Type="uri" Length="1032" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Large-brush-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="44f5d3b3-b5af-49a3-924f-282196f6110c" Type="uri" Length="1299" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-large-brush-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="f137ea31-fcb2-44b3-9804-0faf3d5ad12d" Type="uri" Length="723" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Eraser-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="86600d57-cb7d-403f-bc94-0d8495dab4ee" Type="uri" Length="1116" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-Eraser-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="4637be15-ad0a-4df8-8f9b-1cc4c4de28f0" Type="uri" Length="1450" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Clear-all-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="6bc78bd7-3367-43fa-9600-b967ddd12448" Type="uri" Length="1088" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Snapshot-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="adc2b8d1-49ea-4aab-a59a-07a5b549b149" Type="uri" Length="458" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Rewind-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="69aba549-de3c-47d2-9af2-2d5566f9e483" Type="uri" Length="391" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Play-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="2ca20b02-a1c0-4c06-a3d5-95b8147d67de" Type="uri" Length="259" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Pause-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="0ca71444-ea31-4d86-aacc-a4b02d97a842" Type="uri" Length="429" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Mute-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="68b316d8-6dc8-4e26-a9bf-633fee36830f" Type="uri" Length="471" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Volume-level-1-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="ccfa2f4c-bff4-4232-b574-5229e84c0353" Type="uri" Length="556" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Volume-level-2-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="480d4a10-6c11-4e3b-850f-a3a9316b1bc2" Type="uri" Length="682" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Volume-level-3-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="36bd63b2-4767-45d7-b799-134519f229df" Type="uri" Length="248" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Keyboard-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="7b555203-16e2-4ded-b2d2-bc83cc79aa48" Type="uri" Length="638" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Refresh-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="f8d2a822-e52a-46a6-895b-be8b8cda2f2c" Type="uri" Length="475" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Stop-loading-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="0b54df74-1e2f-4369-b4b7-35242b14f56c" Type="uri" Length="314" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Navigation-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="d8012435-1237-4717-b366-74eb04a4d5a6" Type="uri" Length="622" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Reset-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="0199c133-76d9-4b1b-9ae0-484df49bbf21" Type="uri" Length="675" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Erase_small-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="fa60f508-f68d-4c77-b373-6935767ca537" Type="uri" Length="1014" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-Erase_small-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="bc49918c-4221-44a2-b89f-cfa44525a579" Type="uri" Length="733" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Erase_medium-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="321f5482-0158-457e-81ba-16fef09255eb" Type="uri" Length="1137" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-Erase_medium-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="fb3bf3e4-204e-4682-af35-48bd06675c51" Type="uri" Length="801" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Erase_large-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="379f1151-2084-4ad6-8928-928a9ba989dd" Type="uri" Length="1295" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-Erase_large-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="242b73f8-a6f8-4609-aa33-538d5822012c" Type="uri" Length="907" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/EraserStroke-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="fdabddea-f9a1-43a1-9dc5-532463b8837f" Type="uri" Length="1414" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-EraserStroke-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="e385315f-540d-46b1-901f-a719ee8089aa" Type="uri" Length="690" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Felt-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="356b274a-5627-4fee-b7bf-1ae6068c074d" Type="uri" Length="998" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Selected-Felt-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="0d8747dd-3534-4698-b2cd-20aa398b215f" Type="uri" Length="650" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Redo-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="91909a53-9b33-4cdc-ad84-c6625c0b80f4" Type="uri" Length="663" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Pressed-Redo-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="02c3759a-8904-44c6-a79e-784a819bdcdd" Type="uri" Length="626" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Undo-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="d7aa849a-9c76-4ca3-897f-b1598f1b4dac" Type="uri" Length="689" LastModificationDate="2018-06-20T14:54:06Z" Archive="SmallFiles.zip" DefaultValue="player://data/Icons/Pressed-Undo-icon-IntuiFace-White.png">
+      <Infos>
+        <Tags>icon</Tags>
+      </Infos>
+    </Resource>
+    <Resource Key="b0979eea-872b-4467-9ff7-c80fc4669ea7" Type="uri" Length="3377680" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Videos/HOME.mp4" />
+    <Resource Key="380cbe4c-699a-4bb0-a2b9-35a2d366c3d3" Type="snapshot" Length="3805" LastModificationDate="2018-07-17T15:12:03.3220307Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/default.png" />
+    <Resource Key="5ac70f91-cbe4-4400-8eed-f3957e62a099" Type="uri" Length="291584" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN-01.png">
+      <Alternate Value="player://data/Generated/93ccd92fd41d2ce8b5a6bce7f748a8af.png" Width="1920" Height="1080" Length="67198" LastModificationDate="2018-07-17T13:17:12.3309664Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="364da7fb-6bba-4a07-9927-f113983bb2b2" Type="snapshot" Length="3805" LastModificationDate="2018-07-17T15:12:03.3220307Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/efb52f2.png" />
+    <Resource Key="a1beb33f-b21e-4335-ac46-de66aecce398" Type="generated" Length="12122" LastModificationDate="2018-07-17T08:05:42.4071905Z" Archive="SmallFiles.zip" DefaultValue="player://data/Generated/710533dd879dd120_beginSize3377680endSize0.png" />
+    <Resource Key="77871c1f-71af-41a9-ac02-091fa553934f" Type="uri" Length="296112" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN-02.png">
+      <Alternate Value="player://data/Generated/b40503e9bff35aa0b8772d6acb5c65f8.png" Width="1920" Height="1080" Length="86322" LastModificationDate="2018-07-17T08:07:11.3711192Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="79ba475e-7eaa-4636-a3d4-7458346eff0b" Type="font" DefaultValue="value:Segoe UI">
+      <Dependencies>
+        <Dependency URI="player://data/Contents/SEGOEUIL.iff" Length="878372" LastModificationDate="2018-04-11T23:34:08.2704196Z">
+          <Infos>
+            <FontStyle>normal</FontStyle>
+            <FontWeight>300</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGUILI.iff" Length="445872" LastModificationDate="2018-04-11T23:34:14.2084103Z">
+          <Infos>
+            <FontStyle>italic</FontStyle>
+            <FontWeight>300</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGOEUISL.iff" Length="816540" LastModificationDate="2018-04-11T23:34:08.2704196Z">
+          <Infos>
+            <FontStyle>normal</FontStyle>
+            <FontWeight>350</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGUISLI.iff" Length="453264" LastModificationDate="2018-04-11T23:34:14.2084103Z">
+          <Infos>
+            <FontStyle>italic</FontStyle>
+            <FontWeight>350</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGOEUI.iff" Length="925736" LastModificationDate="2018-04-11T23:34:08.0672781Z">
+          <Infos>
+            <FontStyle>normal</FontStyle>
+            <FontWeight>400</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGOEUII.iff" Length="514920" LastModificationDate="2018-04-11T23:34:08.2704196Z">
+          <Infos>
+            <FontStyle>italic</FontStyle>
+            <FontWeight>400</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGUISB.iff" Length="941172" LastModificationDate="2018-04-11T23:34:08.2547933Z">
+          <Infos>
+            <FontStyle>normal</FontStyle>
+            <FontWeight>600</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGUISBI.iff" Length="443880" LastModificationDate="2018-04-11T23:34:14.2084103Z">
+          <Infos>
+            <FontStyle>italic</FontStyle>
+            <FontWeight>600</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGOEUIB.iff" Length="914092" LastModificationDate="2018-04-11T23:34:08.2704196Z">
+          <Infos>
+            <FontStyle>normal</FontStyle>
+            <FontWeight>700</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGOEUIZ.iff" Length="528476" LastModificationDate="2018-04-11T23:34:08.2704196Z">
+          <Infos>
+            <FontStyle>italic</FontStyle>
+            <FontWeight>700</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGUIBL.iff" Length="324452" LastModificationDate="2018-04-11T23:34:08.2547933Z">
+          <Infos>
+            <FontStyle>normal</FontStyle>
+            <FontWeight>900</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+        <Dependency URI="player://data/Contents/SEGUIBLI.iff" Length="351896" LastModificationDate="2018-04-11T23:34:14.2084103Z">
+          <Infos>
+            <FontStyle>italic</FontStyle>
+            <FontWeight>900</FontWeight>
+            <FontStretch>normal</FontStretch>
+          </Infos>
+        </Dependency>
+      </Dependencies>
+    </Resource>
+    <Resource Key="4c7c8481-8fad-4be0-9557-32209970d34a" Type="snapshot" Length="25551" LastModificationDate="2018-07-17T14:20:29.6551613Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/6446be3f.png" />
+    <Resource Key="fc5b635b-54b6-47a6-bd7f-eb8a7690d7b4" Type="uri" Length="223453" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN-03.png">
+      <Alternate Value="player://data/Generated/95f621b3ab17c12008b78800ca3f705a.png" Width="1920" Height="1080" Length="48427" LastModificationDate="2018-07-17T08:08:53.3832433Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="e3063d3f-70c4-406f-8571-3f718dd5864e" Type="snapshot" Length="14178" LastModificationDate="2018-07-17T14:05:22.1767899Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/f251cc62.png" />
+    <Resource Key="51546df8-c227-438b-92b6-d8d90a992e35" Type="snapshot" Length="3805" LastModificationDate="2018-07-17T08:16:28.6013006Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/43544481.png" />
+    <Resource Key="63635bf7-df56-4b00-be5d-fe6fb32b2281" Type="uri" Length="1835080" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Videos/TRAIN%20NETWORK.mp4" />
+    <Resource Key="0a9f7048-cf2b-454c-8dab-d329f46ae001" Type="generated" Length="60911" LastModificationDate="2018-07-17T08:17:37.2331278Z" Archive="SmallFiles.zip" DefaultValue="player://data/Generated/84a420b8216d297b_beginSize1835080endSize0.png" />
+    <Resource Key="75ab5562-8e45-46ce-8000-c71207032ea9" Type="uri" Length="254399" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN_Plan%20de%20travail%206.png">
+      <Alternate Value="player://data/Generated/c4524f4a4132c21ea172ad083436f0af.png" Width="1920" Height="1080" Length="65929" LastModificationDate="2018-07-17T08:25:40.1320078Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="254ebaf8-62f2-4525-bb80-5498dfb43aa4" Type="snapshot" Length="19258" LastModificationDate="2018-07-17T14:06:51.5175467Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/af36291d.png" />
+    <Resource Key="af8041c2-985a-44d2-90d3-7edc4440b243" Type="uri" Length="2243014" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Videos/BRAKE%20APPLICATION%20.mp4" />
+    <Resource Key="a66e5ddc-000c-45d2-a17c-ec2ab91f1a87" Type="generated" Length="71514" LastModificationDate="2018-07-17T08:27:57.5824469Z" Archive="SmallFiles.zip" DefaultValue="player://data/Generated/81cb3b3c2421e828_beginSize2243014endSize20000000.png" />
+    <Resource Key="4721f52b-969c-4829-9da5-c417a88bcd14" Type="uri" Length="243985" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN_Plan%20de%20travail%208.png">
+      <Alternate Value="player://data/Generated/c5c9f03a428908467bb6613f17d42672.png" Width="1920" Height="1080" Length="60945" LastModificationDate="2018-07-17T13:17:12.1359781Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="dfe7c47e-5729-4fb2-a7bb-db133c20df65" Type="uri" Length="2272243" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Videos/BRAKE%20RELEASE.mp4" />
+    <Resource Key="1c232a14-7809-4769-b85e-d48de512e6c3" Type="snapshot" Length="18486" LastModificationDate="2018-07-17T14:20:38.6012378Z" Archive="Snapshots.zip" DefaultValue="player://data/Snapshots/541dcba4.png" />
+    <Resource Key="aa37d2b9-ff83-44ff-be30-6728cb89afdd" Type="generated" Length="60911" LastModificationDate="2018-07-17T13:17:15.6229681Z" Archive="SmallFiles.zip" DefaultValue="player://data/Generated/9ae00e430ce6a0c2_beginSize2272243endSize0.png" />
+    <Resource Key="1a0418be-8206-44b2-aae2-3a834cdd4882" Type="uri" Length="294246" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN_Plan%20de%20travail%2010.png">
+      <Alternate Value="player://data/Generated/e084378ab998e6ce76079aa92401d31a.png" Width="1920" Height="1080" Length="80205" LastModificationDate="2018-07-17T13:18:34.6011621Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="e1b88881-d77e-4462-be30-3ac06ae20ec6" Type="uri" Length="279088" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN_Plan%20de%20travail%2011.png">
+      <Alternate Value="player://data/Generated/0571eb460355981fd8e4cdcba460e52e.png" Width="2731" Height="1536" Length="109629" LastModificationDate="2018-07-17T13:22:36.8464094Z" />
+    </Resource>
+    <Resource Key="ac4d28e2-e2dd-4175-8ab5-0c100da45944" Type="uri" Length="294225" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN_Plan%20de%20travail%2012.png">
+      <Alternate Value="player://data/Generated/54eac35fc11494cff5e455e0f87b50a8.png" Width="1920" Height="1080" Length="75647" LastModificationDate="2018-07-17T14:03:30.0041359Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="f4383d7f-e915-4247-b2eb-d00b07c5113b" Type="uri" Length="2220760" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Videos/TRAIN_READY_TO_GO.mp4" />
+    <Resource Key="f12e0144-a30a-470f-b4bc-8dd5662c6ace" Type="generated" Length="71482" LastModificationDate="2018-07-17T14:07:01.3151026Z" Archive="SmallFiles.zip" DefaultValue="player://data/Generated/4550f8b6164b9bfa_beginSize2220760endSize20000000.png" />
+    <Resource Key="63310ecc-1857-47c8-97ab-21b966b3185c" Type="uri" Length="278668" LastModificationDate="2018-07-13T12:17:00Z" DefaultValue="player://data/Images/DESIGN-APPLI-EN_Plan%20de%20travail%2014.png">
+      <Alternate Value="player://data/Generated/1f5ca0646eaf9c74cebaf3a99e3ca040.png" Width="1920" Height="1080" Length="65841" LastModificationDate="2018-07-17T14:13:15.2157676Z" Archive="SmallFiles.zip" />
+    </Resource>
+    <Resource Key="3b31eab5-66c0-40fb-8396-147467c08619" Type="uri" Length="4874" LastModificationDate="2018-07-17T14:12:14.7270307Z" Archive="SmallFiles.zip" DefaultValue="player://data/Images/house-black-silhouette-without-door.png">
+      <Alternate Value="player://data/Generated/8ceffc2e2241a1c4ee7f84f859d6e3ed.png" Width="128" Height="128" Length="2035" LastModificationDate="2018-07-17T14:13:14.9077281Z" Archive="SmallFiles.zip" />
+    </Resource>
+  </Resources>
+  <Sequence>
+    <SpaceRef Space="player://visuals/SNCF-DEMO-FREIN/START/" />
+    <SpaceRef Space="player://visuals/SNCF-DEMO-FREIN/CHOICE%20WAGON/" />
+    <SpaceRef Space="player://visuals/SNCF-DEMO-FREIN/CONFIRM%20WAGON/" />
+    <SpaceRef Space="player://visuals/SNCF-DEMO-FREIN/CHECKING%20BRAKE/" />
+    <SpaceRef Space="player://visuals/SNCF-DEMO-FREIN/BRAKE%20RELEASE/" />
+  </Sequence>
+  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+      <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+      <Reference URI="">
+        <Transforms>
+          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+        </Transforms>
+        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <DigestValue>a4OTnHVVoSuVzNZwWPkU6ll9n5c=</DigestValue>
+      </Reference>
+    </SignedInfo>
+    <SignatureValue>fapxR3KBOWiunEU/LOSXZPp8DExRFX5wf5j3w9StMlEDrIQA9bPL7org4QGGkapw31hc9xGPUfmFs/OrTKOeicmZIUskGPooOMwYh0mfzP0VsnupKbZvjMMnHonJnyXcUgAV0hypc37M3Yg+pTDpFIqGTcCOZL7q/B5kseqcViT/1wiLrgks5fploYXSW/cIOzJw59AFVGuOCu3mNE8AmkAYjgqmTh5y0V40m263wjln+1kUHl4bU1mx+ICKD6sNIQUkKBUdJ0cU+CHN+RXEXL4ste8tjc7QxmSx8Vv8rFOvnbv5FdR9hhRBMuUhv01tO1Y8DhXcfPQnsYLHAwjzng==</SignatureValue>
+    <Object Id="private" MimeType="text/xml" Encoding="utf-8">
+      <SignatureData xmlns="">
+        <EditonLevel>ENTERPRISE</EditonLevel>
+        <HostName>DESKTOP-215QVLP</HostName>
+        <Data><![CDATA[VoAJsqINPR5sigGaxvWPabPQYYPiGNCjOAov596u1iGn1hnlwzr3w9UcII7KVQhP49ncepWvY2R2xaYTLx2Ell/uC32mndEDrVu1vSZyls9Pt3VFx1sb6/lM0JIcRSNXJvV7OFhfTrdb1fvZTEhudq/1KqCRUkH9MyNKtkfkFCoRUnDWMtNwKtzoiFUcFDaj7uEiDHy28nYZCkX/WOgMcnOy+u3idjUTCvokTLFysmxJjcXteHTP4nLiwpzssAOpS1HUuW+wHbgaZbSThyqTbdc4gkdv8vivhM6w0EPRfNSeMWEl610AsCS7HU8IHK3kXFo6OA7O9wwgPAxNppdKOxGITT9KvhTKvvDO+Y67lDVT7rFYypgOkBpt+G+rcgIlRWCxkkuw8woKMjYmBplgnmBwJb6Zleobq5YjbrLMjxyYp03lqMNFd50XNI5gArUWejA5ylKrV4xwUv/9NWlOr6qvzQtWcgNBUKlcn+g0qoF/wxZdMjnjrzXWAHD22UsRq1aZUZ0ZWDgbyrEaPx6Q0rM3LDEZnnwtgjau3o7GKs4mjMUf0rnWMI2PVgNIrUwIUYJsCNsqktrdZ0jZ3S8TY2xB8B6ThnKgAu9d4MXd4gmUlDj8dKpONQAWhOXz0SKN4yvKtC/6ceXb91YK0I8osq98g3FF5phApc5xIq6LSnT03WKfqwp2cSzwBJjPmOncoi6MqT65ydktkNEH5VpzWjHJLurkdz/zIUGXrqVh2npUkMzeP6z9tFhu7C2YS9W4MnoD7pjBTWXrV6c6qcoe4mwoXlQ/WNY0TEJNKHZ4wUAST8yuX/n8HQktLT3r9Bx5o99f+dQcM0jkwEvB4c/O8X4U+HmP8R0ox+KgRjemIWueIs4o6XC/RSfRuik2YyHWYhrszhx2bSdNI5AD5/k9y9uy4weCWNDx4wg2bgsXMyygOJ1/qkDa7XYVFTi+ApWDgoRGkO+nvpn9HtR2P2c7E6LtN7iz8wLPltCXLuJTrxBEdXMfOgEB3/CVigLo+LJZbe+ZrDbVS9CfgS9MaHfQfX7zfKiKro/HMy6VdY4VAOQgrE/+n1VI9EZ1CAiESPrDepZmL3nFV8c6z8gHyowe/9bPp4ibAq9+C5ZKNYqDAElMqGAC7cOa5hBmlGbjTLeNIUxWsoAAxt2OL6WWuWzGcXTu51XgHFLik5rtIkKTya92rgxtzYyX2/XVf1t+xO46DzSR+3l4d3AsGLYlXn5p8FGCARBR1SGqX9m+XXmT2g6ZoquujhGv/sBqvQYW6tUtxJvFenyK0hJa8cuY9QxSnJCfEmHQELhAZLl7s5teM6O51Zoyzmil9Uh0FlPtGpFKyH3gsXobW31/8BOrPh1iXWy6y5M5295MAQvCqdiTBXg4F64TDeJ0fLUrr0F0DZF1Euxbb0WO9aTLo5BeauMN3mlUz9/6tgxZIbgOXMZ4+yb7US7FI2H/CrauUB/jVyR9XxfXu7v1ooAbFouzY/QbftjIgJoCgl5TUq3xDJ6XNstmaT4+HbxZrmAFI+EXBv73CkWgkTn97/yRTsO0KJyysn8aI22fQQFfNlZ1NN2Bm+er1oCVL4T8zwmV3wvmoeO9QZWLvuIFi45zlULnSwef4lS0NxGbDVXkvpDXl6t6t3ena/p+zTtSBtOZ4h6xaVaMUEo7XOX2hwUSXnzMuWeiHFucKcaMstBcCalsflZ12LwQD0Rv0yn0f/13IHqmhUKqTdaOnM5W8yTlOXDX0fMK2WxhflCnCw3vj/bWhcDBZnZsSD4h0GoXuYlci5Xuabyronn4cY7qpfWfkITZRlrAB+ht+hRIzxGHKBhoM43LNa9QaQJpiOnwNFFOkYeXpca50xz56pF+fwZI10maIXzOMy9NbJ/m7aJu4WKWeXrtFskGV9JYs8dp9XuzlF/t99yjqp1IHoBaq23H6yC21efwvoTYN9b3ydvyD0LlbIDS2FTlBdMEXqWWDf7qc5QG4EIzH5CvFA1NQvAnbIpq6GbHE0ILsVpnrO6bcmvS8oLMHVyU/k4Zwxaxx3ZfqEjqD29vH8+7K3wmHqE0QFSvRMKgMnbSD5H4YtYzh2ICvL6GBq/fYHQ6QH/KohasRA3Z+p0NNhOUYeVyIpBoT9+4k0m2KNxfzfpx6ZPFMwXtRnsOFrv8S5Js67+NSAZ5xjRqDDauDzDN9zvpsm5+eop8trshYw==]]></Data>
+        <Crypto>
+          <IV><![CDATA[YQu3XWzI5iUbnwi7KlqJAFUK1/Kx3JzJ4KCBDjmcwBd/fAQ3uaGUTHJ5vUpBWwlSln6ubNwXkOChJaVqX0i4r+loLEb8fkWnlWnHQwAVquguJwikojo0kdL4YO1/SN9/3jz6T04Pa/vUdpX+b1LVGP6/6ooppsKGIOEynmyQi4oRe4jcCV+ZEvfePpTEmHgrR+DziAoQv0fAOA0x9neRB7X8BVrtoAIFUD43IdRHlSaOMZvNr07QeGdumPdKYB3LuUT9vy0CLHUrU3cbLftMo+UQxhpjcdz6IGDRf986jGVvSGznevTkkjJRN7785Mc+ImBcDASxQKZ8L6+mULXZhA==]]></IV>
+          <Key><![CDATA[izuPDBuTYyNhOkE2TU/bflV7YLTDykCM/LkanjAyIp4yorDvEYR1tPVVTVnSGOW3nJjD/K3DHiyltG1GEVr9Vm0kiEY68ueShXasPwEOwubB582VXeN7bhNQcByAMyFRPltgULT3FB/UUQl542uIB3OuqZN2pkxVb5UNy+FaQUBp6beejuRIrW0u0Ds4ykuwJNN8jFxgTgENPA70leo/FkGLiBfqHO5X/QOs0vSvXhD3NR6kZTMTNdxyR9YKLVpCbniiUqIfNyp+mGLLGUoZX7Fzy+1Gyi9aEJQMmcDQsgtcqSDGV5FHENFC69N/UdpbRxbqAPqnkSoAOI8WiIOteg==]]></Key>
+        </Crypto>
+      </SignatureData>
+    </Object>
+  </Signature>
+</Presentation>
